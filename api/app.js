@@ -11,10 +11,6 @@ app.use(express.json());
 const readDB = async () => JSON.parse(await fs.readFile(DB_FILE, 'utf8'));
 const writeDB = async (data) => fs.writeFile(DB_FILE, JSON.stringify(data, null, 2));
 
-export default function handler(req, res) {
-  res.status(200).json({ message: "HALLO BOT" });
-    }
-
 const handleRequest = (handler) => async (req, res) => {
     try {
         const result = await handler(req);

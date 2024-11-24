@@ -22,11 +22,11 @@ const handleRequest = (handler) => async (req, res) => {
 };
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, './index.html'));
 });
 
 app.get('/conf/:authToken', (req, res) => {
-    res.sendFile(path.join(__dirname, 'config.html'));
+    res.sendFile(path.join(__dirname, './config.html'));
 });
 
 app.post('/conf/:authToken/save-configs', handleRequest(async (req) => {
